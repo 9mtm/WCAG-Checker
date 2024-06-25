@@ -27,10 +27,6 @@ We welcome contributions from the community. Whether you're a developer, designe
 
 [dieberater.com](https://dieberater.com)
 
-## Footer Links
-
-[Online Kurse](https://online-lernen.live) | [Digitale Kompetenz](https://online-lernen.live) | [Lernplattform](https://online-lernen.live) | [Weiterbildung](https://online-lernen.live) | [Kurse buchen](https://online-lernen.live)
-
 ## Libraries and Resources Used
 
 - [Codepen: Pro Sidebar Template](https://codepen.io/azouaoui-med/pen/wpBadb)
@@ -54,4 +50,24 @@ This project is built using Python 3. Ensure you have Python 3 installed before 
    python3 -m venv venv
 source venv/bin/activate  # On Windows use `venv\Scripts\activate`
 
+
+3. **Install dependencies::**:
+   ```bash
+pip install -r requirements.txt
+
+
+
+4. **Run the application:**:
+   ```bash
+python app.py
+
+## License
+
+This project is licensed under the MIT License.
+
+
+
+## More Links
+
+[Online Kurse](https://online-lernen.live) | [Digitale Kompetenz](https://online-lernen.live) | [Lernplattform](https://online-lernen.live) | [Weiterbildung](https://online-lernen.live) | [Kurse buchen](https://online-lernen.live)
 
