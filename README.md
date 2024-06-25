@@ -55,7 +55,9 @@ source venv/bin/activate  # On Windows use `venv\Scripts\activate`
    ```bash
 pip install -r requirements.txt
 
-
+3. ***Install dependencies:**:
+   ```bash
+python app.py
 
 4. **Run the application:**:
    ```bash
