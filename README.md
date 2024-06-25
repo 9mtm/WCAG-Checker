@@ -47,3 +47,11 @@ This project is built using Python 3. Ensure you have Python 3 installed before 
    ```bash
    git clone https://github.com/yourusername/wcag-checker.git
    cd wcag-checker
+
+
+2. **Create a virtual environment:**:
+   ```bash
+   python3 -m venv venv
+source venv/bin/activate  # On Windows use `venv\Scripts\activate`
+
+
