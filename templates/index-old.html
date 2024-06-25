@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barrierefreiheit | WCAG Checker Website & PDFs</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        #log-container {
+            margin-top: 20px;
+            border: 1px solid #ccc;
+            padding: 10px;
+            height: 300px;
+            overflow-y: scroll;
+            background-color: #f9f9f9;
+        }
+        footer {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #333;
+            color: white;
+            text-align: center;
+        }
+        footer ul {
+            list-style: none;
+            padding: 0;
+        }
+        footer ul li {
+            display: inline;
+            margin: 0 10px;
+        }
+        footer ul li a {
+            color: white;
+            text-decoration: none;
+        }
+        footer ul li a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Barrierefreiheit | WCAG Checker Website & PDFs</h1>
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('index') }}">Home</a></li>
+                <li><a href="{{ url_for('color_contrast') }}">Color Contrast Checker</a></li>
+                <li><a href="{{ url_for('wcag_checklist') }}">WCAG Checklist</a></li>
+                <li><a href="{{ url_for('wcag_checklist') }}">WCAG Fix</a></li>
+                <li><a href="#">Links 1</a></li>
+                <li><a href="#">Links 2</a></li>
+                <li><a href="#">Links 3</a></li>
+            </ul>
+        </nav>
+        <form id="upload-form" action="{{ url_for('upload_file') }}" method="post" enctype="multipart/form-data">
+            <input type="file" name="file" id="file" required>
+            <button type="submit">Upload PDF</button>
+        </form>
+        <div id="results-container" style="display: none;">
+            <h2>Accessibility Check Results</h2>
+            <div id="file-info">
+                <p>Filename: <span id="filename"></span></p>
+                <p>Title: <span id="title"></span></p>
+                <p>Language: <span id="language"></span></p>
+                <p>Tags: <span id="tags"></span></p>
+                <p>Pages: <span id="pages"></span></p>
+                <p>Size: <span id="size"></span></p>
+            </div>
+            <table id="results-table">
+                <thead>
+                    <tr>
+                        <th>Checkpoint</th>
+                        <th>Passed</th>
+                        <th>Warned</th>
+                        <th>Failed</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>PDF Syntax</td>
+                        <td id="pdf-syntax-passed">0</td>
+                        <td id="pdf-syntax-warned">0</td>
+                        <td id="pdf-syntax-failed">0</td>
+                    </tr>
+                    <tr>
+                        <td>Fonts</td>
+                        <td id="fonts-passed">0</td>
+                        <td id="fonts-warned">0</td>
+                        <td id="fonts-failed">0</td>
+                    </tr>
+                    <tr>
+                        <td>Content</td>
+                        <td id="content-passed">0</td>
+                        <td id="content-warned">0</td>
+                        <td id="content-failed">0</td>
+                    </tr>
+                    <tr>
+                        <td>Embedded Files</td>
+                        <td id="embedded-files-passed">0</td>
+                        <td id="embedded-files-warned">0</td>
+                        <td id="embedded-files-failed">0</td>
+                    </tr>
+                    <tr>
+                        <td>Natural Language</td>
+                        <td id="natural-language-passed">0</td>
+                        <td id="natural-language-warned">0</td>
+                        <td id="natural-language-failed">0</td>
+                    </tr>
+                    <tr>
+                        <td>Structure Elements</td>
+                        <td id="structure-elements-passed">0</td>
+                        <td id="structure-elements-warned">0</td>
+                        <td id="structure-elements-failed">0</td>
+                    </tr>
+                    <tr>
+                        <td>Structure Tree</td>
+                        <td id="structure-tree-passed">0</td>
+                        <td id="structure-tree-warned">0</td>
+                        <td id="structure-tree-failed">0</td>
+                    </tr>
+                    <tr>
+                        <td>Role Mapping</td>
+                        <td id="role-mapping-passed">0</td>
+                        <td id="role-mapping-warned">0</td>
+                        <td id="role-mapping-failed">0</td>
+                    </tr>
+                    <tr>
+                        <td>Alternate Descriptions</td>
+                        <td id="alternate-descriptions-passed">0</td>
+                        <td id="alternate-descriptions-warned">0</td>
+                        <td id="alternate-descriptions-failed">0</td>
+                    </tr>
+                    <tr>
+                        <td>Metadata</td>
+                        <td id="metadata-passed">0</td>
+                        <td id="metadata-warned">0</td>
+                        <td id="metadata-failed">0</td>
+                    </tr>
+                    <tr>
+                        <td>Document Settings</td>
+                        <td id="document-settings-passed">0</td>
+                        <td id="document-settings-warned">0</td>
+                        <td id="document-settings-failed">0</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div id="log-container">
+                <h3>Log Output:</h3>
+                <pre id="log-messages"></pre>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <ul>
+            <li><a href="{{ url_for('index') }}">Home</a></li>
+            <li><a href="{{ url_for('color_contrast') }}">Color Contrast Checker</a></li>
+            <li><a href="{{ url_for('wcag_checklist') }}">WCAG Checklist</a></li>
+            <li><a href="{{ url_for('wcag_checklist') }}">WCAG Fix</a></li>
+            <li><a href="#">Links 1</a></li>
+            <li><a href="#">Links 2</a></li>
+            <li><a href="#">Links 3</a></li>
+            <!-- Add more links as needed -->
+        </ul>
+    </footer>
+    
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+    <script>
+        async function fetchLogUpdates() {
+            const response = await fetch('{{ url_for('fetch_log') }}');
+            const logContent = await response.text();
+            const logMessages = document.getElementById('log-messages');
+            logMessages.textContent = logContent;
+            logMessages.scrollTop = logMessages.scrollHeight; // Scroll to the bottom
+        }
+
+        document.getElementById('upload-form').addEventListener('submit', () => {
+            const resultsContainer = document.getElementById('results-container');
+            resultsContainer.style.display = 'block';
+
+            setInterval(fetchLogUpdates, 1000); // Fetch updates every second
+        });
+    </script>
+</body>
+</html>

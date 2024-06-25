@@ -1,0 +1,290 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+}
+
+.container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+input[type="file"] {
+    margin-bottom: 10px;
+}
+
+button {
+    padding: 10px;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+#results-container {
+    margin-top: 20px;
+}
+
+#results-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#results-table th, #results-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+
+#results-table th {
+    background-color: #f2f2f2;
+}
+
+
+
+
+/* Generic */
+@import url('https://fonts.googleapis.com/css?family=Ubuntu');
+
+html, body {
+  background: #ddd;
+  font-family: Ubuntu, sans-serif;
+  font-size: 16px;
+}
+
+h1, h2 {
+  text-align: center;
+  display: block;
+  margin-top: 0;
+}
+
+/* Tool general styles */
+#color-contrast {
+  background: #fff;
+  box-shadow: 0 0 1rem rgba(0,0,0,0.25);
+  border-radius: 2px;
+  width: 500px;
+  margin: auto auto;
+  box-sizing: border-box;
+  padding: 2rem;
+  /*position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);*/
+}
+
+/* character */
+#jill {
+  width: 250px;
+  height: 250px;
+  margin: auto auto;
+  border-radius: 100%;
+}
+
+/* SVG */
+@-moz-keyframes blink { 
+  0%  { ry: 5; }
+  49% { ry: 5; }
+  50% { ry: 0; }
+  51% { ry: 5; }
+}
+@-webkit-keyframes blink { 
+  0%  { ry: 5; }
+  49% { ry: 5; }
+  50% { ry: 0; }
+  51% { ry: 5; }
+}
+@keyframes blink { 
+  0%  { ry: 5; }
+  49% { ry: 5; }
+  50% { ry: 0; }
+  51% { ry: 5; }
+}
+.skin { fill: #eab38f; }
+.eyes { fill: #1f1f1f; animation: blink 10s alternate infinite; -webkit-animation: blink 10s alternate infinite; -moz-animation: blink 10s alternate infinite;}
+.hair { fill: #2f1b0d; }
+.line { fill: none; stroke: #2f1b0d; stroke-width:2px; }
+.arm, #mouth, #smile, .eyes, .hand, .eyebrow { transition: all 0.25s; }
+
+/* boxes */
+#boxes {
+  display: flex;
+  margin-top: 1.5rem;
+}
+
+#boxes > div {
+  flex: 1;
+  text-align: center;
+  background: #081;
+  color: white;
+  padding: 0.5rem 0;
+  margin-left: 10px;
+  border-radius: 3px;
+  transition: background 0.5s;
+  position: relative;
+}
+
+#boxes > div::after {
+  content: "✓ Pass";
+  display: block;
+  position: absolute;
+  color: #000;
+  text-align:center;
+  width: 100%;
+  margin-top: 10px;
+}
+
+#boxes > div.fail {
+  background: #d32;
+}
+
+#boxes > div.fail::after {
+  content: "✕ Fail";
+}
+
+#boxes > div:first-child {
+  margin-left: 0;
+}
+
+#boxes span:first-child {
+  font-size: 0.75em;
+  display: inline-block;
+  margin-bottom: 0.5em;
+}
+
+/* demo */
+#sample-text {
+  margin: 2.5rem 0 1.6rem 0;
+  padding: 1rem;
+  background: #fff;
+  color: #000;
+  text-align: center;
+  font-size: 20px;
+  border-radius: 2px;
+}
+
+/* sliders */
+#bars {
+  display: flex;
+  flex-direction: row;
+}
+
+#bars > div {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+#bars > div:first-child {
+  margin-right: 0.5rem;
+}
+
+#bars > div:last-child {
+  margin-left: 0.5rem;
+}
+
+#bars > div > div {
+  display: flex;
+  margin-bottom: 0.5rem;
+}
+
+#bars label {
+  display: inline-block;
+  color: white;
+  width: 2rem;
+  height: 2rem;
+  line-height: 2rem;
+  font-size: 1rem;
+  text-align: center;
+  border-radius: 2px;
+  box-sizing: border-box;
+}
+
+label.red { background: #d32; }
+label.green { background: #081; }
+label.blue { background: #26e; }
+
+#bars input[type="range"] {
+  flex: 1;
+}
+#bars input[type="number"] {
+  text-align: center;
+  width: 3rem;
+  border-radius: 2px;
+  border: 1px solid #ccc;
+  font-size: 0.75rem;
+  height: 2rem;
+  box-sizing:border-box;
+  line-height: 2rem;
+}
+#bars input[type="text"] {
+  border-radius: 2px;
+  border: 1px solid #ccc;
+  text-align: center;
+  font-size: 1rem;
+  height: 2rem;
+  box-sizing:border-box;
+  line-height: 2rem;
+}
+
+/* Example CSS styles */
+body {
+  font-family: Arial, sans-serif;
+}
+
+fieldset {
+  margin-bottom: 20px;
+}
+
+label {
+  margin-right: 10px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+td {
+  vertical-align: top;
+  padding: 10px;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li.stripe {
+  background-color: #f9f9f9;
+}
+
+li.checked {
+  text-decoration: line-through;
+}
+
+.nomargin {
+  margin: 0;
+}

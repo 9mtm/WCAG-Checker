@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Results</title>
+    <style>
+        .passed { color: green; }
+        .warning { color: yellow; }
+        .failed { color: red; }
+    </style>
+</head>
+<body>
+    <h1>Results for {{ filename }}</h1>
+    <p><span class="passed">Passed: {{ passed }}</span></p>
+    <p><span class="warning">Warned: {{ warnings }}</span></p>
+    <p><span class="failed">Failed: {{ errors }}</span></p>
+    <p>The inspection process has been successfully completed. Number of errors: {{ errors }}. Number of warnings: {{ warnings }}.</p>
+    <ul>
+        {% for line in log_content %}
+            <li>{{ line }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
