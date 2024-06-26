@@ -43,10 +43,12 @@
                                 </a>
                                 <div class="sub-menu-list">
                                     <ul>
-                                        <li class="menu-item"><a href="#"><span class="menu-title">html To PDF</span></a></li>
-                                        <li class="menu-item"><a href="#"><span class="menu-title">Fix WCAG Accessibility</span></a></li>
-                                        <li class="menu-item"><a href="#"><span class="menu-title">Scan PDF accessibility</span></a></li>
-                                        <li class="menu-item"><a href="#"><span class="menu-title">Scan Website WCAG accessibility</span></a></li>
+                                        <li class="menu-item"><a href="#"><span class="menu-title">PDF to HTML</span></a></li>
+                                        <li class="menu-item"><a href="/wcag-checklist"><span class="menu-title">WCAG Checklist</span></a></li>
+                                        <li class="menu-item"><a href="/color-contrast"><span class="menu-title">WCAG Color Contrast</span></a></li>
+                                        <li class="menu-item"><a href="#"><span class="menu-title">WCAG Fix Accessibility</span></a></li>
+                                        <li class="menu-item"><a href="#"><span class="menu-title">WCAG Scan PDF accessibility</span></a></li>
+                                        <li class="menu-item"><a href="#"><span class="menu-title">WCAG Scan Website accessibility</span></a></li>
                                     </ul>
                                 </div>
                             </li>
@@ -89,10 +91,17 @@
                                                 </ul>
                                             </div>
                                         </li>
-                                        <!-- License -->
-                                        <li class="menu-item"><a href="#"><span class="menu-title">License</span></a></li>
                                     </ul>
                                 </div>
+                            </li>
+                            <!-- License -->
+                            <li class="menu-item">
+                                <a href="#">
+                                    <span class="menu-icon">
+                                        <i class="ri-file-2-fill"></i>
+                                    </span>
+                                    <span class="menu-title">License</span>
+                                </a>
                             </li>
                         </ul>
                     </nav>
@@ -118,12 +127,11 @@
                 <div>
                     <a id="btn-toggle" href="#" class="sidebar-toggler break-point-sm"><i class="ri-menu-line ri-xl"></i></a>
                     <h1 style="margin-bottom: 0">PDF Accessibility Checker</h1>
-                    <span style="display: inline-block">WCAG Checker is an open-source tool designed to verify the compliance of websites and PDF files with the Web Content Accessibility Guidelines (WCAG). This project aims to assist developers and designers in ensuring that their websites and PDF documents are accessible to all users, including those with disabilities.</span>
-                    <br />
-                    <span>
+                    <p>WCAG Checker is an open-source tool designed to verify the compliance of websites and PDF files with the Web Content Accessibility Guidelines (WCAG). This project aims to assist developers and designers in ensuring that their websites and PDF documents are accessible to all users, including those with disabilities.</p>
+                    <p>
                         Full Code and documentation available on
                         <a href="https://github.com/9mtm/WCAG-Checker" target="_blank">Github</a>
-                    </span>
+                    </p>
                     <div style="margin-top: 10px">
                         <a href="https://github.com/9mtm/WCAG-Checker" target="_blank">
                             <img alt="GitHub stars" src="https://img.shields.io/github/stars/9mtm/WCAG-Checker?style=social" />
@@ -154,56 +162,14 @@
                 </div>
                 <div>
                     <h2>Contributions</h2>
-                    <p>We welcome contributions from the community. Whether you're a developer, designer, or someone passionate about accessibility, your input is valuable. Please feel free to open issues or submit pull requests.</p>
+                    <p>We welcome contributions from the community. Whether you're a developer, designer, or someone passionate about accessibility, your input is valuable. Visit our Github repository to learn more about how you can contribute to this project.</p>
+                    <a href="https://github.com/9mtm/WCAG-Checker" target="_blank" class="btn-primary">Contribute Now</a>
                 </div>
                 <div>
-                    <h2>Powered by</h2>
-                    <p><a href="https://dieberater.com" target="_blank">die Berater Unternehmensberatungs GmbH</a></p>
+                    <h2>Get in Touch</h2>
+                    <p>If you have questions, suggestions, or feedback, we'd love to hear from you. Reach out to us through our Github repository or contact us directly via email.</p>
+                    <p>Email: contact@dieberater.com</p>
                 </div>
-                <h1>Libraries and Resources Used</h1>
-                <ul>
-                    <li>
-                        <strong>Codepen:</strong> 
-                        <ul>
-                            <li><a href="https://codepen.io/">Pro Sidebar Template</a></li>
-                            <li><a href="https://codepen.io/">Flexbox Sidebar Layout</a></li>
-                            <li><a href="https://codepen.io/">Accessible SVG Icons</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            
-                <h2>Additional Libraries and Code Used</h2>
-                <ul>
-                    <li>
-                        <strong>Flask:</strong> The web framework used to create the web interface and handle HTTP requests.
-                        <a href="https://github.com/pallets/flask" target="_blank">GitHub Link</a> 
-                        - <em>BSD-3-Clause License</em>
-                    </li>
-                    <li>
-                        <strong>Logging:</strong> Configured with a rotating file handler to manage log file sizes.
-                        <a href="https://github.com/python/cpython/blob/main/Lib/logging" target="_blank">GitHub Link</a> 
-                        - <em>Python Software Foundation License</em>
-                    </li>
-                    <li>
-                        <strong>PyPDF2:</strong> Used to read and extract text from PDF files.
-                        <a href="https://github.com/py-pdf/PyPDF2" target="_blank">GitHub Link</a> 
-                        - <em>MIT License</em>
-                    </li>
-                    <li>
-                        <strong>pdfminer:</strong> Provides advanced PDF text extraction capabilities, including layout analysis.
-                        <a href="https://github.com/pdfminer/pdfminer.six" target="_blank">GitHub Link</a> 
-                        - <em>MIT License</em>
-                    </li>
-                </ul>
-                
-                <h2>Quick links to WCAG resources:</h2>
-                <ul>
-                    <li><a href="https://www.w3.org/TR/WCAG21/" target="_blank">WCAG 2.0 Standard</a></li>
-                    <li><a href="https://www.w3.org/WAI/standards-guidelines/wcag/new-in-22/" target="_blank">WCAG 2.1 Standard</a></li>
-                    <li><a href="https://www.w3.org/WAI/WCAG22/quickref/" target="_blank">How to Meet WCAG 2 (Quick Reference)</a></li>
-                    <li><a href="https://www.w3.org/TR/WCAG22/" target="_blank">WCAG 2.2 Standard, What’s New in WCAG 2.2</a></li>
-                </ul>
-
                 <footer class="footer">
                     <small style="margin-bottom: 20px; display: inline-block">
                         © 2023 made with
