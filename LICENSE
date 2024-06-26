@@ -1,21 +1,51 @@
 MIT License
 
-Copyright (c) 2024 Mohamed Alarade
+Copyright (c) 2024 die Berater Unternehmensberatungs GmbH
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+Lead Developer: Mohamed Alarade
+
+### Resources
+
+- **Pro Sidebar Template**: [Link](https://codepen.io/)
+- **Flexbox Sidebar Layout**: [Link](https://codepen.io/)
+- **Accessible SVG Icons**: [Link](https://codepen.io/)
+
+### Additional Libraries
+
+- **Flask**: The web framework used to create the web interface and handle HTTP requests. [GitHub Link](https://github.com/pallets/flask) - BSD-3-Clause License
+- **Logging**: Configured with a rotating file handler to manage log file sizes. [GitHub Link](https://github.com/python/cpython/tree/main/Lib/logging) - Python Software Foundation License
+- **PyPDF2**: Used to read and extract text from PDF files. [GitHub Link](https://github.com/py-pdf/pypdf2) - MIT License
+- **pdfminer**: Provides advanced PDF text extraction capabilities, including layout analysis. [GitHub Link](https://github.com/pdfminer/pdfminer.six) - MIT License
+
+---
+
+MIT Lizenz
+
+Copyright (c) 2024 die Berater Unternehmensberatungs GmbH
+
+Hiermit wird unentgeltlich jeder Person, die eine Kopie dieser Software und der zugehörigen Dokumentationsdateien (die "Software") erhält, die Erlaubnis erteilt, uneingeschränkt mit der Software zu handeln, einschließlich und ohne Einschränkung der Rechte zur Nutzung, zum Kopieren, Ändern, Zusammenführen, Veröffentlichen, Verteilen, Unterlizenzieren und/oder zu verkaufen, und Personen, denen diese Software zur Verfügung gestellt wird, dies zu erlauben, unter den folgenden Bedingungen:
+
+Der obige Urheberrechtshinweis und dieser Genehmigungshinweis müssen in allen Kopien oder wesentlichen Teilen der Software enthalten sein.
+
+DIE SOFTWARE WIRD "WIE BESEHEN" BEREITGESTELLT, OHNE JEGLICHE GARANTIE, AUSDRÜCKLICH ODER IMPLIZIERT, EINSCHLIESSLICH ABER NICHT BESCHRÄNKT AUF DIE GARANTIEN DER MARKTGÄNGIGKEIT, EIGNUNG FÜR EINEN BESTIMMTEN ZWECK UND NICHTVERLETZUNG. IN KEINEM FALL SIND DIE AUTOREN ODER URHEBER FÜR ANSPRÜCHE, SCHÄDEN ODER SONSTIGE HAFTUNG VERANTWORTLICH, OB IN EINER KLAGE AUS VERTRAG, UNERLAUBTER HANDLUNG ODER ANDERWEITIG, DIE SICH AUS, AUS ODER IM ZUSAMMENHANG MIT DER SOFTWARE ODER DER VERWENDUNG ODER ANDEREN VORGÄNGEN IN DER SOFTWARE ERGEBEN.
+
+Lead Developer: Mohamed Alarade
+
+### Ressourcen
+
+- **Pro Sidebar Template**: [Link](https://codepen.io/)
+- **Flexbox Sidebar Layout**: [Link](https://codepen.io/)
+- **Accessible SVG Icons**: [Link](https://codepen.io/)
+
+### Zusätzliche Bibliotheken
+
+- **Flask**: Das Web-Framework, das zur Erstellung der Web-Oberfläche und zur Bearbeitung von HTTP-Anfragen verwendet wird. [GitHub Link](https://github.com/pallets/flask) - BSD-3-Clause Lizenz
+- **Logging**: Konfiguriert mit einem rotierenden Dateihandler zur Verwaltung der Dateigrößenprotokolle. [GitHub Link](https://github.com/python/cpython/tree/main/Lib/logging) - Python Software Foundation Lizenz
+- **PyPDF2**: Wird verwendet, um Text aus PDF-Dateien zu lesen und zu extrahieren. [GitHub Link](https://github.com/py-pdf/pypdf2) - MIT Lizenz
+- **pdfminer**: Bietet fortschrittliche PDF-Text-Extraktionsfähigkeiten, einschließlich Layout-Analyse. [GitHub Link](https://github.com/pdfminer/pdfminer.six) - MIT Lizenz
