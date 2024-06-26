@@ -29,7 +29,7 @@ We welcome contributions from the community. Whether you're a developer, designe
 
 ## Libraries and Resources Used
 
-- [Codepen: Pro Sidebar Template](https://codepen.io/azouaoui-med/pen/wpBadb)
+- [Codepen: PDF Accessibility Checker Template](https://codepen.io/azouaoui-med/pen/wpBadb)
 - [Codepen: Flexbox Sidebar Layout](https://codepen.io/weboverhauls/pen/zYvopYE)
 - [Codepen: Accessible SVG Icons](https://codepen.io/alvaromontoro/pen/YgpWZG)
 
