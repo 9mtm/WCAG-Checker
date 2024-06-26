@@ -27,7 +27,7 @@ We welcome contributions from the community. Whether you're a developer, designe
 
 [dieberater.com](https://dieberater.com)
 
-## Libraries and Resources Used
+## Resources
 
 - [Codepen: PDF Accessibility Checker Template](https://codepen.io/azouaoui-med/pen/wpBadb)
 - [Codepen: Flexbox Sidebar Layout](https://codepen.io/weboverhauls/pen/zYvopYE)
