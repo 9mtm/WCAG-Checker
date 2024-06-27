@@ -254,3 +254,6 @@ function updateDemoColors(colorFront, colorBack) {
         el.classList.add("stripe");
     });
 });
+
+
+

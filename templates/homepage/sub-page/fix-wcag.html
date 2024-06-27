@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PDF Accessibility Checker | WCAG Compliance Tool | online WCAG website Checker</title>
@@ -47,15 +48,14 @@
                                         <li class="menu-item"><a href="/wcag-checklist"><span class="menu-title">WCAG Checklist</span></a></li>
                                         <li class="menu-item"><a href="/color-contrast"><span class="menu-title">WCAG Color Contrast</span></a></li>
                                         <li class="menu-item"><a href="/fix-wcag"><span class="menu-title">WCAG PDF Fix Accessibility</span></a></li>
-                                        <li class="menu-item"><a href="/scan-wcag-pdf"><span class="menu-title">WCAG Scan PDF Accessibility</span></a></li>
-                                        <li class="menu-item"><a href="/scan-wcag-website"><span class="menu-title">WCAG Scan Website Accessibility</span></a></li>
-                                        
+                                        <li class="menu-item"><a href="/scan-wcag-pdf"><span class="menu-title">WCAG Scan PDF accessibility</span></a></li>
+                                        <li class="menu-item"><a href="/scan-wcag-website"><span class="menu-title">WCAG Scan Website accessibility</span></a></li>
                                     </ul>
                                 </div>
                             </li>
                             <!-- Documentation -->
                             <li class="menu-item sub-menu">
-                                <a href="#">
+                                <a href="/">
                                     <span class="menu-icon">
                                         <i class="ri-vip-diamond-fill"></i>
                                     </span>
@@ -95,7 +95,7 @@
                                     </ul>
                                 </div>
                             </li>
-                            <!-- License -->
+                             <!-- License -->
                             <li class="menu-item">
                                 <a href="https://github.com/9mtm/WCAG-Checker/blob/main/LICENSE">
                                     <span class="menu-icon">
@@ -143,60 +143,40 @@
                     </div>
                 </div>
                 <div>
-                    <h2>Features</h2>
-                    <ul>
-                        <li>PDF Checking: Capability to upload and check PDF files for any violations of WCAG guidelines.</li>
-                        <li>Website Checking: Analyze web pages to identify accessibility issues.</li>
-                        <li>Detailed Reports: Provides comprehensive reports outlining elements that need improvement to meet accessibility standards.</li>
-                        <li>User-Friendly Interface: Intuitive UI allowing users to easily check files and web pages.</li>
-                        <li>Seamless Integration: Ability to integrate with existing development tools and streamline audit processes.</li>
-                    </ul>
-                </div>
-                <div>
-                    <h2>How It Works</h2>
-                    <ul>
-                        <li>Upload PDF: Users can upload PDF files through the interface.</li>
-                        <li>Analyze Website: Users can input website URLs to analyze their accessibility.</li>
-                        <li>Get Reports: The tool generates detailed reports highlighting areas that need attention for better accessibility.</li>
-                        <li>Make Improvements: Users can follow the recommendations to enhance the accessibility of their content.</li>
-                    </ul>
-                </div>
-                <div>
-                    <h2>Contributions</h2>
-                    <p>We welcome contributions from the community. Whether you're a developer, designer, or someone passionate about accessibility, your input is valuable. Visit our Github repository to learn more about how you can contribute to this project.</p>
-                    <a href="https://github.com/9mtm/WCAG-Checker" target="_blank" class="btn-primary">Contribute Now</a>
-                </div>
-                <div>
-                    <h2>Get in Touch</h2>
-                    <p>If you have questions, suggestions, or feedback, we'd love to hear from you. Reach out to us through our Github repository or contact us directly via email.</p>
-                    <p>Email: contact@dieberater.com</p>
-                </div>
-                <footer class="footer">
-                    <small style="margin-bottom: 20px; display: inline-block">
-                        © 2023 made with
-                        <span style="color: red; font-size: 18px;">&#10084;</span> in Austria by <a href="https://dieberater.com" target="_blank">dieberater.com</a>
+                    
 
-                        <br>
-                        <a target="_blank" href="https://online-lernen.live">Online Kurse</a> |
-                        <a target="_blank" href="https://online-lernen.live">Digitale Kompetenz</a> |
-                        <a target="_blank" href="https://online-lernen.live">Lernplattform</a> |
-                        <a target="_blank" href="https://online-lernen.live">Weiterbildung</a> |
-                        <a target="_blank" href="https://online-lernen.live">Kurse buchen</a> |
-                        <a target="_blank" href="https://online-lernen.live">Online lernen</a>
-                        
-                    </small>
-                    <br />
-                    <div class="social-links">
-                        <a href="https://github.com/9mtm/WCAG-Checker" target="_blank"><i class="ri-github-fill ri-xl"></i></a>
-                        <a href="https://www.linkedin.com/company/die-berater-unternehmensberatung" target="_blank"><i class="ri-linkedin-box-fill ri-xl"></i></a>
-                    </div>
-                </footer>
-            </main>
-            <div class="overlay"></div>
-        </div>
+
+                            <!--Code is here -->
+
+
+
+                    
+ <footer class="footer">
+    <small style="margin-bottom: 20px; display: inline-block">
+        © 2023 made with
+        <span style="color: red; font-size: 18px;">&#10084;</span> in Austria by <a href="https://dieberater.com" target="_blank">dieberater.com</a>
+
+        <br>
+        <a target="_blank" href="https://online-lernen.live">Online Kurse</a> |
+        <a target="_blank" href="https://online-lernen.live">Digitale Kompetenz</a> |
+        <a target="_blank" href="https://online-lernen.live">Lernplattform</a> |
+        <a target="_blank" href="https://online-lernen.live">Weiterbildung</a> |
+        <a target="_blank" href="https://online-lernen.live">Kurse buchen</a> |
+        <a target="_blank" href="https://online-lernen.live">Online lernen</a>
+    </small>
+    <br />
+    <div class="social-links">
+        <a href="https://github.com/9mtm/WCAG-Checker" target="_blank"><i class="ri-github-fill ri-xl"></i></a>
+        <a href="https://www.linkedin.com/company/die-berater-unternehmensberatung" target="_blank"><i class="ri-linkedin-box-fill ri-xl"></i></a>
     </div>
-    <!-- Include external JS libraries -->
-    <script src="https://unpkg.com/@popperjs/core@2"></script>
-    <script src="{{ url_for('static', filename='script2.js') }}"></script>
+</footer>
+</main>
+<div class="overlay"></div>
+</div>
+</div>
+<!-- Include external JS libraries -->
+<script src="https://unpkg.com/@popperjs/core@2"></script>
+<script src="{{ url_for('static', filename='script2.js') }}"></script>
+
 </body>
 </html>

@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF Accessibility Checker | WCAG Compliance Tool | online WCAG website Checker</title>
+    <meta name="description" content="PDF Accessibility Checker is an open-source tool to ensure websites and PDF files comply with WCAG guidelines, enhancing accessibility for all users.">
+    <meta name="keywords" content="PDF Accessibility Checker, WCAG Checker, web accessibility, PDF accessibility, WCAG guidelines">
+    <meta name="author" content="die Berater Unternehmensberatungs GmbH">
+    <link rel="canonical" href="https://wcag.dieberater.com">
+
+    <!-- Include external CSS libraries -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css">
+    <link rel="stylesheet" href="https://unpkg.com/css-pro-layout@1.1.0/dist/css/css-pro-layout.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style2.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style-check-list.css') }}">
+
+    <style>
+        #log-container {
+            margin-top: 20px;
+            border: 1px solid #ccc;
+            padding: 10px;
+            height: 300px;
+            overflow-y: scroll;
+            background-color: #f9f9f9;
+        }
+        footer {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #333;
+            color: white;
+            text-align: center;
+        }
+        footer ul {
+            list-style: none;
+            padding: 0;
+        }
+        footer ul li {
+            display: inline;
+            margin: 0 10px;
+        }
+        footer ul li a {
+            color: white;
+            text-decoration: none;
+        }
+        footer ul li a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="layout has-sidebar fixed-sidebar fixed-header">
+        <aside id="sidebar" class="sidebar break-point-sm has-bg-image">
+            <a id="btn-collapse" class="sidebar-collapser"><i class="ri-arrow-left-s-line"></i></a>
+            <div class="image-wrapper">
+                <img src="{{ url_for('static', filename='sidebar-bg.jpg') }}" alt="sidebar background" />
+            </div>
+            <div class="sidebar-layout">
+                <div class="sidebar-header">
+                    <a href="/" class="pro-sidebar-logo" style="text-decoration: none; color: inherit;">
+                        <div>dB</div>
+                        <h5>WCAG Checker</h5>
+                    </a>
+                </div>
+                <div class="sidebar-content">
+                    <nav class="menu open-current-submenu">
+                        <ul>
+                            <!-- Menu items -->
+                            <!-- WCAG -->
+                            <li class="menu-item sub-menu">
+                                <a href="#">
+                                    <span class="menu-icon">
+                                        <i class="ri-bar-chart-2-fill"></i>
+                                    </span>
+                                    <span class="menu-title">WCAG</span>
+                                </a>
+                                <div class="sub-menu-list">
+                                    <ul>
+                                        <li class="menu-item"><a href="/pdf-to-html"><span class="menu-title">PDF to HTML</span></a></li>
+                                        <li class="menu-item"><a href="/wcag-checklist"><span class="menu-title">WCAG Checklist</span></a></li>
+                                        <li class="menu-item"><a href="/color-contrast"><span class="menu-title">WCAG Color Contrast</span></a></li>
+                                        <li class="menu-item"><a href="/fix-wcag"><span class="menu-title">WCAG PDF Fix Accessibility</span></a></li>
+                                        <li class="menu-item"><a href="/scan-wcag-pdf"><span class="menu-title">WCAG Scan PDF accessibility</span></a></li>
+                                        <li class="menu-item"><a href="/scan-wcag-website"><span class="menu-title">WCAG Scan Website accessibility</span></a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <!-- Documentation -->
+                            <li class="menu-item sub-menu">
+                                <a href="/">
+                                    <span class="menu-icon">
+                                        <i class="ri-vip-diamond-fill"></i>
+                                    </span>
+                                    <span class="menu-title">Documentation</span>
+                                    
+                                    <span class="menu-suffix">
+                                        <span class="badge primary">V.1.0</span>
+                                    </span>
+                                </a>
+                                <div class="sub-menu-list">
+                                    <ul>
+                                        <li class="menu-item sub-menu">
+                                            <div class="sub-menu-list">
+                                                <ul>
+                                                    <li class="menu-item"><a href="#"><span class="menu-title">Input</span></a></li>
+                                                    <li class="menu-item"><a href="#"><span class="menu-title">Select</span></a></li>
+                                                    <li class="menu-item sub-menu">
+                                                        <a href="#"><span class="menu-title">More</span></a>
+                                                        <div class="sub-menu-list">
+                                                            <ul>
+                                                                <li class="menu-item"><a href="#"><span class="menu-title">CheckBox</span></a></li>
+                                                                <li class="menu-item"><a href="#"><span class="menu-title">Radio</span></a></li>
+                                                                <li class="menu-item sub-menu">
+                                                                    <a href="#"><span class="menu-title">Want more ?</span><span class="menu-suffix">&#x1F914;</span></a>
+                                                                    <div class="sub-menu-list">
+                                                                        <ul>
+                                                                            <li class="menu-item"><a href="#"><span class="menu-prefix">&#127881;</span><span class="menu-title">You made it </span></a></li>
+                                                                        </ul>
+                                                                    </div>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                             <!-- License -->
+                            <li class="menu-item">
+                                <a href="https://github.com/9mtm/WCAG-Checker/blob/main/LICENSE">
+                                    <span class="menu-icon">
+                                        <i class="ri-file-2-fill"></i>
+                                    </span>
+                                    <span class="menu-title">License</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="sidebar-footer">
+                    <div class="footer-box">
+                        <div style="padding: 0 10px">
+                            <span style="display: block; margin-bottom: 10px">PDF Accessibility Checker is also available on Github</span>
+                            <div style="margin-bottom: 15px">
+                                <img alt="preview badge" src="https://img.shields.io/github/stars/9mtm/WCAG-Checker" />
+                            </div>
+                            <div>
+                                <a href="https://github.com/9mtm/WCAG-Checker" target="_blank">Check it out!</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+        <div id="overlay" class="overlay"></div>
+        <div class="layout">
+            <main class="content">
+                <div>
+                    <a id="btn-toggle" href="#" class="sidebar-toggler break-point-sm"><i class="ri-menu-line ri-xl"></i></a>
+                    <h1 style="margin-bottom: 0">PDF Accessibility Checker</h1>
+                    <p>WCAG Checker is an open-source tool designed to verify the compliance of websites and PDF files with the Web Content Accessibility Guidelines (WCAG). This project aims to assist developers and designers in ensuring that their websites and PDF documents are accessible to all users, including those with disabilities.</p>
+                    <p>
+                        Full Code and documentation available on
+                        <a href="https://github.com/9mtm/WCAG-Checker" target="_blank">Github</a>
+                    </p>
+                    <div style="margin-top: 10px">
+                        <a href="https://github.com/9mtm/WCAG-Checker" target="_blank">
+                            <img alt="GitHub stars" src="https://img.shields.io/github/stars/9mtm/WCAG-Checker?style=social" />
+                        </a>
+                        <a href="https://github.com/9mtm/WCAG-Checker" target="_blank">
+                            <img alt="GitHub forks" src="https://img.shields.io/github/forks/9mtm/WCAG-Checker?style=social" />
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    
+                <body>
+                    <div class="container">
+                        <h1>Barrierefreiheit | WCAG Checker Website & PDFs</h1>
+         
+                        <form id="upload-form" action="{{ url_for('upload_file') }}" method="post" enctype="multipart/form-data">
+                            <input type="file" name="file" id="file" required>
+                            <button type="submit">Upload PDF</button>
+                        </form>
+                        <div id="results-container" style="display: none;">
+                            <h2>Accessibility Check Results</h2>
+                            <div id="file-info">
+                                <p>Filename: <span id="filename"></span></p>
+                                <p>Title: <span id="title"></span></p>
+                                <p>Language: <span id="language"></span></p>
+                                <p>Tags: <span id="tags"></span></p>
+                                <p>Pages: <span id="pages"></span></p>
+                                <p>Size: <span id="size"></span></p>
+                            </div>
+                            <table id="results-table">
+                                <thead>
+                                    <tr>
+                                        <th>Checkpoint</th>
+                                        <th>Passed</th>
+                                        <th>Warned</th>
+                                        <th>Failed</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>PDF Syntax</td>
+                                        <td id="pdf-syntax-passed">0</td>
+                                        <td id="pdf-syntax-warned">0</td>
+                                        <td id="pdf-syntax-failed">0</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Fonts</td>
+                                        <td id="fonts-passed">0</td>
+                                        <td id="fonts-warned">0</td>
+                                        <td id="fonts-failed">0</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Content</td>
+                                        <td id="content-passed">0</td>
+                                        <td id="content-warned">0</td>
+                                        <td id="content-failed">0</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Embedded Files</td>
+                                        <td id="embedded-files-passed">0</td>
+                                        <td id="embedded-files-warned">0</td>
+                                        <td id="embedded-files-failed">0</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Natural Language</td>
+                                        <td id="natural-language-passed">0</td>
+                                        <td id="natural-language-warned">0</td>
+                                        <td id="natural-language-failed">0</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Structure Elements</td>
+                                        <td id="structure-elements-passed">0</td>
+                                        <td id="structure-elements-warned">0</td>
+                                        <td id="structure-elements-failed">0</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Structure Tree</td>
+                                        <td id="structure-tree-passed">0</td>
+                                        <td id="structure-tree-warned">0</td>
+                                        <td id="structure-tree-failed">0</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Role Mapping</td>
+                                        <td id="role-mapping-passed">0</td>
+                                        <td id="role-mapping-warned">0</td>
+                                        <td id="role-mapping-failed">0</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Alternate Descriptions</td>
+                                        <td id="alternate-descriptions-passed">0</td>
+                                        <td id="alternate-descriptions-warned">0</td>
+                                        <td id="alternate-descriptions-failed">0</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Metadata</td>
+                                        <td id="metadata-passed">0</td>
+                                        <td id="metadata-warned">0</td>
+                                        <td id="metadata-failed">0</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Document Settings</td>
+                                        <td id="document-settings-passed">0</td>
+                                        <td id="document-settings-warned">0</td>
+                                        <td id="document-settings-failed">0</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div id="log-container">
+                                <h3>Log Output:</h3>
+                                <pre id="log-messages"></pre>
+                            </div>
+                        </div>
+                    </div>
+                
+                    
+                    <script src="{{ url_for('static', filename='script2.js') }}"></script>
+                    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+                    <script>
+                        async function fetchLogUpdates() {
+                            const response = await fetch('{{ url_for('fetch_log') }}');
+                            const logContent = await response.text();
+                            const logMessages = document.getElementById('log-messages');
+                            logMessages.textContent = logContent;
+                            logMessages.scrollTop = logMessages.scrollHeight; // Scroll to the bottom
+                        }
+                
+                        document.getElementById('upload-form').addEventListener('submit', () => {
+                            const resultsContainer = document.getElementById('results-container');
+                            resultsContainer.style.display = 'block';
+                
+                            setInterval(fetchLogUpdates, 1000); // Fetch updates every second
+                        });
+                    </script>
+                </body>
+
+
+                    
+ <footer class="footer">
+    <small style="margin-bottom: 20px; display: inline-block">
+        © 2023 made with
+        <span style="color: red; font-size: 18px;">&#10084;</span> in Austria by <a href="https://dieberater.com" target="_blank">dieberater.com</a>
+
+        <br>
+        <a target="_blank" href="https://online-lernen.live">Online Kurse</a> |
+        <a target="_blank" href="https://online-lernen.live">Digitale Kompetenz</a> |
+        <a target="_blank" href="https://online-lernen.live">Lernplattform</a> |
+        <a target="_blank" href="https://online-lernen.live">Weiterbildung</a> |
+        <a target="_blank" href="https://online-lernen.live">Kurse buchen</a> |
+        <a target="_blank" href="https://online-lernen.live">Online lernen</a>
+    </small>
+    <br />
+    <div class="social-links">
+        <a href="https://github.com/9mtm/WCAG-Checker" target="_blank"><i class="ri-github-fill ri-xl"></i></a>        
+        <a href="https://www.linkedin.com/company/die-berater-unternehmensberatung" target="_blank"><i class="ri-linkedin-box-fill ri-xl"></i></a>
+    </div>
+</footer>
+</main>
+<div class="overlay"></div>
+</div>
+</div>
+<!-- Include external JS libraries -->
+<script src="https://unpkg.com/@popperjs/core@2"></script>
+<script src="{{ url_for('static', filename='script2.js') }}"></script>
+
+</body>
+</html>

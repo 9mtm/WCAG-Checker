@@ -1,0 +1,74 @@
+body {
+  color: #000;
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+fieldset {
+  margin: .5rem 1.5rem 1.5rem 0;
+  max-width: 22rem;
+  float: left;
+}
+p[aria-live] {
+  clear: left;
+}
+ul {
+  list-style-type: none;
+  line-height: 1.2rem;
+  padding: 0;
+}
+ul:first-child {
+  padding-right: 1rem;
+}
+.stripe {
+  background-color: #f5f5f5;
+}
+li {
+  line-height: 1.3rem;
+  margin: 0.5rem 0;
+  padding: 0.25rem 0.4rem;
+}
+ul li {
+  font-weight: bold;
+}
+ul ul li {
+  font-weight: normal;
+  letter-spacing: 1px;
+}
+a {
+  color: #000;
+  text-decoration: none;
+  border-bottom: #aaa 1px solid;
+}
+a:hover,
+a:focus {
+  border-bottom: transparent;
+
+}
+.checked {
+  text-decoration: line-through;
+}
+.checked a {
+  color: #666;
+}
+.hidden {
+  display: none;
+}
+.levela span,
+.levelaa span,
+.levelaaa span {
+  color: #555;
+  background-color: #ddd;
+  padding: 2px 4px;
+  font-weight: normal;
+  font-size: 0.75rem;
+}
+table,
+td,
+th {
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+td {
+  vertical-align: top;
+  width: 33%;
+}

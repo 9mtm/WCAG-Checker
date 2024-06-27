@@ -211,14 +211,35 @@ def scan_pdf_for_accessibility(pdf_path):
     except Exception as e:
         app.logger.error(f'Failed to process {pdf_path}: {e}')
         raise
+    
 
 @app.route('/')
 def index():
     return render_template('homepage/index.html')
 
+@app.route('/wcag-checklist')
+def wcag_checklist():
+    return render_template('homepage/sub-page/wcag-checklist.html')
+
 @app.route('/color-contrast')
 def color_contrast():
-    return render_template('color-contrast.html')
+    return render_template('homepage/sub-page/color-contrast.html')
+
+@app.route('/pdf-to-html')
+def pdf_to_html():
+    return render_template('homepage/sub-page/pdf-to-html.html')
+
+@app.route('/fix-wcag')
+def fix_wcag():
+    return render_template('homepage/sub-page/fix-wcag.html')
+
+@app.route('/scan-wcag-pdf')
+def scan_wcag_pdf():
+    return render_template('homepage/sub-page/scan-wcag-pdf.html')
+
+@app.route('/scan-wcag-website')
+def scan_wcag_website():
+    return render_template('homepage/sub-page/scan-wcag-website.html')
 
 @app.route('/upload', methods=['POST'])
 def upload_file():
@@ -260,11 +281,6 @@ def show_results(filename):
         app.logger.error(f'Error fetching log file for {filename}: {e}')
         return 'An error occurred while fetching the log file.', 500
     
-    
-    
-    
-    
-    
 
 @app.route('/log')
 def download_log():
@@ -279,14 +295,6 @@ def fetch_log():
     except Exception as e:
         app.logger.error(f'Error fetching log file: {e}')
         return Response('Error fetching log file', status=500, mimetype='text/plain')
-
-
-
-
-@app.route('/wcag-checklist')
-def wcag_checklist():
-    return render_template('wcag-checklist.html')
-
 
 if __name__ == '__main__':
     ensure_directory_exists(app.config['UPLOAD_FOLDER'])
